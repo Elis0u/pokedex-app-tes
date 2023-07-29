@@ -9,11 +9,14 @@ import { PokemonModule } from './pokemon/pokemon.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    LoginComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,7 @@ import { InMemoryDataService } from './in-memory-data.service';
     // PUT OTHERS MODULE THAN AppRoutingModule AVANT
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
